@@ -31,17 +31,17 @@ public class AsciiTable {
     	    if (iSys == 0) {
                 // baseline has no p-value
                 if (results.numOptRuns > 1) {
-                    columns[iMetric+1] = String.format("%2.1f (%.1f/%.1f/-)", avg, sSel, sTest);
+                    columns[iMetric+1] = String.format("%2.2f (%.2f/%.2f/-)", avg, sSel, sTest);
                 } else {
-                    columns[iMetric+1] = String.format("%2.1f (%.1f/*/-)", avg, sSel);
+                    columns[iMetric+1] = String.format("%2.2f (%.2f/*/-)", avg, sSel);
                 }
             } else {
                 // TODO: Just show improvements over baseline?
                 double p = results.get(iMetric, iSys, Type.P_VALUE);
                 if (results.numOptRuns > 1) {
-                    columns[iMetric+1] = String.format("%2.1f (%.1f/%.1f/%.2f)", avg, sSel, sTest, p);
+                    columns[iMetric+1] = String.format("%2.2f (%.2f/%.2f/%.2f)", avg, sSel, sTest, p);
                 } else {
-                    columns[iMetric+1] = String.format("%2.1f (%.1f/*/**)", avg, sSel);
+                    columns[iMetric+1] = String.format("%2.2f (%.2f/*/**)", avg, sSel);
                 }
             }
     	}

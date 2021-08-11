@@ -11,6 +11,9 @@ import com.google.common.base.*;
 
 public class TER extends Metric<IntStats> {
 
+  @Option(shortName = "s", longName = "ter.caseon", usage = "Case-sensitivity in TER?", defaultValue = "true")
+  boolean caseon;
+
   @Option(shortName = "P", longName = "ter.punctuation", usage = "Use punctuation in TER?", defaultValue = "false")
   boolean punctuation;
 
@@ -110,7 +113,7 @@ public class TER extends Metric<IntStats> {
     costfunc._substitute_cost = substituteCost;
 
     // TERcalc.setNormalize(normalized);
-    // TERcalc.setCase(caseon);
+    calc.setCase(caseon);
     calc.setPunct(punctuation);
     calc.setBeamWidth(beamWidth);
     calc.setShiftDist(maxShiftDistance);
